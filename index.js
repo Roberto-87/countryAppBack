@@ -22,7 +22,7 @@ const { conn } = require("./src/db.js");
 const saveApiData = require("./src/controllers/saveApiDataCountries.js");
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then(async () => {
+conn.sync({ alter: true }).then(async () => {
   await saveApiData();
 
   //console.log(await saveApiData());
